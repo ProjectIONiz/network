@@ -1,0 +1,15 @@
+{
+  "name": "network-testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "midi": "^2.0.0",
+    "ws": "^8.12.0"
+  }
+}
