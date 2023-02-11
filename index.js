@@ -1,4 +1,5 @@
 import Modular from './utilities/modular.js';
+import fs from 'fs';
 
 const modular = new Modular();
 
@@ -13,7 +14,9 @@ let protocol = modular.getModule('protocol').getClass();
 let network = modular.getModule('network').getClass();
 let database = modular.getModule('db').getClass();
 
-socket.start({port:3030});
+const config = JSON.parse(fs.readFileSync(__dirname+'/config.json'));
+
+socket.start({port: config?.socket_settings?.port || 8080});
 
 // parse arguments that start with -- or -
 let args = process.argv.slice(2);
